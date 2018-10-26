@@ -1,0 +1,3 @@
+node_modules/
+admin/dist/*
+!admin/dist/block.build.js
