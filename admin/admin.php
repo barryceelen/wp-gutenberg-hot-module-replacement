@@ -23,8 +23,8 @@ function enqueue_editor_assets() {
 
 	$path = GUTENBERG_HOT_RELOAD_PLUGIN_URL . 'admin/dist/block.build.js';
 
-	if ( defined( 'GB_HOT_RELOAD' ) && GB_HOT_RELOAD ) {
-		$path = 'http://localhost:' . GB_HOT_RELOAD . '/gutenberg-hot-module-replacement/block.hot.js';
+	if ( defined( 'GB_HOT_MODULE_REPLACE' ) && GB_HOT_MODULE_REPLACE ) {
+		$path = 'http://localhost:' . GB_HOT_MODULE_REPLACE . '/gutenberg-hot-module-replacement/block.hot.js';
 	}
 
 	wp_enqueue_script(
