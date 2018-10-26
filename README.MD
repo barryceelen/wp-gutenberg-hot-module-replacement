@@ -1,6 +1,6 @@
 # WordPress Gutenberg Hot Module Replacement Example
 
-An example plugin demonstrating how to use React's hot module replacement while developing a Gutenberg block. No more death by a thousand ~~cuts~~ reloads. Your <kbd>command</kbd> + <kbd>R</kbd> keys will thank you.
+An example plugin demonstrating how to use React's [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/) when developing a Gutenberg block. No more death by a thousand ~~cuts~~ reloads. Your <kbd>command</kbd> + <kbd>R</kbd> keys will thank you.
 
 ## Set up plugin
 
@@ -8,7 +8,7 @@ Install plugin dependencies via npm: `npm install`
 
 ## Development with hot module replacement
 
-First define the `GB_HOT_MODULE_REPLACE` constant in your development environment, eg. in your wp-config.php file: `define('GB_HOT_MODULE_REPLACE', '8080');` (**Note:** Do not do this in on your production server). The `8080` represents the port number the assets will be loaded from during development. Define a different port if `8080` doesn't fit your setup.
+First define the `GB_HOT_MODULE_REPLACE` constant in your development environment, eg. in your wp-config.php file: `define('GB_HOT_MODULE_REPLACE', '8080');` (**Note:** Do not do this in on your production server). `8080` represents the port number the assets will be loaded from during development. Define a different port if `8080` doesn't fit your setup.
 
 Run watch task: `npm run hot`
 
