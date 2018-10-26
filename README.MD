@@ -8,7 +8,7 @@ Install plugin dependencies via npm: `npm install`
 
 ## Development with hot module replacement
 
-First define the `GB_HOT_MODULE_REPLACE` constant in your development environment, eg. in your wp-config.php file. Note: Do not do this in on your production server: `define('GB_HOT_MODULE_REPLACE', '8080');`. The `8080` represents the port number the assets will be loaded from during development. Define a different port if `8080` doesn't fit your setup.
+First define the `GB_HOT_MODULE_REPLACE` constant in your development environment, eg. in your wp-config.php file: `define('GB_HOT_MODULE_REPLACE', '8080');` (**Note:** Do not do this in on your production server). The `8080` represents the port number the assets will be loaded from during development. Define a different port if `8080` doesn't fit your setup.
 
 Run watch task: `npm run hot`
 
