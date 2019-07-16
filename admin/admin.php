@@ -21,19 +21,26 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_editor_asse
  */
 function enqueue_editor_assets() {
 
-	$path = GUTENBERG_HOT_RELOAD_PLUGIN_URL . 'admin/dist/block.build.js';
+	$url = GUTENBERG_HOT_RELOAD_PLUGIN_URL . 'admin/dist/block.build.js';
 
-	if ( defined( 'GB_HOT_MODULE_REPLACE' ) && GB_HOT_MODULE_REPLACE ) {
-		$path = 'http://localhost:' . GB_HOT_MODULE_REPLACE . '/gutenberg-hot-module-replacement/block.hot.js';
+	if ( defined( 'WP_LOCAL_DEV' ) && WP_LOCAL_DEV ) {
+
+		if ( file_exists( GUTENBERG_HOT_RELOAD_PLUGIN_DIR . 'admin/dist/block.dev.js' ) ) {
+			$url = PRICELIST_PLUGIN_URL . 'http://localhost:8080/gutenberg-hot-module-replacement/block.dev.js';
+		} elseif ( file_exists( GUTENBERG_HOT_RELOAD_PLUGIN_DIR . 'admin/dist/block.hot.js' ) ) {
+			$url = 'http://localhost:8080/gutenberg-hot-module-replacement/block.hot.js';
+		}
 	}
 
 	wp_enqueue_script(
 		'gutenberg-hot-module-replacement',
-		$path,
+		$url,
 		array(
 			'wp-blocks',
 			'wp-i18n',
-			'wp-element'
-		)
+			'wp-element',
+		),
+		'1.0.1',
+		true
 	);
 }

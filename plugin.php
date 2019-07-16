@@ -9,7 +9,7 @@
  *
  * Plugin Name: Gutenberg Hot Module Replacement
  * Description: Example plugin to demonstrate hot module replacement when developing a Gutenberg block.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Barry Ceelen
  * Author URI: https://github.com/barryceelen
  * Text Domain: gutenberg-hot-module-replacement

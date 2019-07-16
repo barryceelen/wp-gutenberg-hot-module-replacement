@@ -3,9 +3,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 const path         = require( 'path' );
 const port         = 8080;
 const packageJson  = require('./package.json');
+const postfix      = process.env.POSTFIX_ENV || 'build';
 
 module.exports = {
-	devtool: 'sourcemap',
+	devtool: isProduction ? 'production' : '',
 	mode: isProduction ? 'production' : 'development',
 	target: 'web',
 	entry: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve( __dirname, 'admin/dist' ),
-		filename: isProduction ? 'block.build.js' : 'block.hot.js',
+		filename: 'block.' + postfix + '.js',
 	},
 	module: {
 		rules: [{

@@ -1,8 +1,7 @@
 {
   "name": "gutenberg-hot-module-replacement",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-3.0-or-later",
-  "main": "block.js",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -10,14 +9,18 @@
     "babel-preset-env": "^1.6.0",
     "cross-env": "^5.0.1",
     "react-hot-loader": "^4.3.11",
+    "rimraf": "^2.6.3",
     "webpack": "^4.23.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
+    "prebuild": "rimraf ./admin/dist/*",
     "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
-    "dev": "cross-env BABEL_ENV=default webpack --watch",
-    "hot": "npm run dev & webpack-dev-server --hot --inline --config ./webpack.config.js"
+    "dev": "cross-env BABEL_ENV=default POSTFIX_ENV=dev webpack --watch",
+    "postdev": "rimraf ./admin/dist/block.dev.js",
+    "hot": "cross-env BABEL_ENV=default POSTFIX_ENV=hot webpack --watch & webpack-dev-server --hot --inline --config ./webpack.config.js",
+    "posthot": "rimraf ./admin/dist/block.hot.js"
   },
   "dependencies": {}
 }
