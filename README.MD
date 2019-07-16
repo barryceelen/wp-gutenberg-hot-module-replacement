@@ -2,23 +2,10 @@
 
 An example plugin demonstrating how to use React's [hot module replacement](https://webpack.js.org/concepts/hot-module-replacement/) when developing a Gutenberg block. No more death by a thousand ~~cuts~~ reloads. Your <kbd>command</kbd> + <kbd>R</kbd> keys will thank you.
 
-## Set up plugin
+## Install dependencies and run build script
 
-Install plugin dependencies via npm: `npm install`
-
-## Development with hot module replacement
-
-First define the `GB_HOT_MODULE_REPLACE` constant in your development environment, eg. in your wp-config.php file: `define('GB_HOT_MODULE_REPLACE', '8080');` (**Note:** Do not do this in on your production server). `8080` represents the port number the assets will be loaded from during development. Define a different port if `8080` doesn't fit your setup.
-
-Run watch task: `npm run hot`
-
-## Development without hot module replacement
-
-You'll need to reload the page after each change to your Gutenberg block. Do not set `define('GB_HOT_MODULE_REPLACE', '8080');`, else the plugin will load the incorrect JavaScript file.
-
-Run watch task: `npm run dev`
-
-
-## Build plugin
-
-To build the block for use on a production server: `npm run build`
+1. Define the `WP_LOCAL_DEV` constant in your development environment
+1. `npm install`: Install plugin dependencies via npm
+1. `npm run dev`: Development without hot module replacement, you'll need to reload the page after every change
+1. `npm run hot`: Development with hot module replacement
+1. `npm run build`: To build the block for use on a production server:
