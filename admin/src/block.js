@@ -16,7 +16,7 @@ import HotComponent from "./hot-component.js"
 
 registerBlockType( 'gutenberg-hot-module-replacement/example', {
 	title: __( 'Hot Module Replacement Example' ),
-	icon: '',
+	icon: 'book-alt',
 	category: 'common',
 	supports: {
 		html: false,
